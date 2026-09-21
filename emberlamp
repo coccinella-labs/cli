@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# emberlamp - Master CLI to control all emberlamp repositories
-# Usage: emberlamp <command> [options]
+# coccinella-labs - Master CLI to control all coccinella-labs repositories
+# Usage: coccinella-labs <command> [options]
 
 set -e
 
-ORG="emberlamp"
+ORG="coccinella-labs"
 
 # Fetch repos from config repo
 get_repos() {
@@ -38,7 +38,7 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 # List all repos
 list_repos() {
-  echo "Emberlamp Repositories:"
+  echo "Coccinella Labs Repositories:"
   for repo in "${REPOS[@]}"; do
     echo "  - $repo"
   done
@@ -81,7 +81,7 @@ push_all() {
 # Create new repo
 create_repo() {
   local name="$1"
-  local description="${2:-New emberlamp repository}"
+  local description="${2:-New coccinella-labs repository}"
   gh repo create "$ORG/$name" --private --description "$description"
   log_info "Created $ORG/$name"
 }
@@ -117,9 +117,9 @@ status_all() {
 # Main
 case "$1" in
   --help|-h)
-    echo "emberlamp - Master CLI for Emberlamp Organization"
+    echo "coccinella-labs - Master CLI for Coccinella Labs Organization"
     echo ""
-    echo "Usage: emberlamp <command>"
+    echo "Usage: coccinella-labs <command>"
     echo ""
     echo "Commands:"
     echo "  list                 List all repositories"
@@ -131,9 +131,9 @@ case "$1" in
     echo "  exec <command>       Execute command in all repos"
     echo ""
     echo "Examples:"
-    echo "  emberlamp list"
-    echo "  emberlamp clone ~/emberlamp"
-    echo "  emberlamp create my-new-repo"
+    echo "  coccinella-labs list"
+    echo "  coccinella-labs clone ~/coccinella-labs"
+    echo "  coccinella-labs create my-new-repo"
     ;;
   list)
     list_repos
@@ -163,7 +163,7 @@ case "$1" in
     ;;
   *)
     log_error "Unknown command: $1"
-    echo "Run 'emberlamp --help' for usage"
+    echo "Run 'coccinella-labs --help' for usage"
     exit 1
     ;;
 esac
