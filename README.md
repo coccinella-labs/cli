@@ -2,76 +2,76 @@
   <img src="https://raw.githubusercontent.com/Coccinella-Labs/cli/main/.github/assets/thumbnail.png" alt="cli" width="100%">
 </p>
 
-# emberlamp
+# coccinella-labs
 
-Master CLI to control all Emberlamp repositories.
+Master CLI to control all Coccinella Labs repositories.
 
 ## Dynamic Repository Management
 
-The CLI fetches the list of repositories dynamically from [emberlamp/config](https://github.com/emberlamp/config) → `repos.json`. This means you don't need to update the CLI when adding new repos - just update the JSON file!
+The CLI fetches the list of repositories dynamically from [coccinella-labs/config](https://github.com/coccinella-labs/config) → `repos.json`. This means you don't need to update the CLI when adding new repos - just update the JSON file!
 
 ### To add new repos:
-1. Update [repos.json](https://github.com/emberlamp/config/blob/main/repos.json) in the config repo
-2. All emberlamp CLI commands will automatically use the updated list
+1. Update [repos.json](https://github.com/coccinella-labs/config/blob/main/repos.json) in the config repo
+2. All coccinella-labs CLI commands will automatically use the updated list
 
 ## Installation
 
 ```bash
-gh extension install emberlamp/cli
+gh extension install coccinella-labs/cli
 ```
 
 Or add to PATH:
 ```bash
-cp emberlamp /usr/local/bin/
+cp coccinella-labs /usr/local/bin/
 ```
 
 ## Usage
 
 ```bash
 # List all repositories
-emberlamp list
+coccinella-labs list
 
 # Clone all repos
-emberlamp clone ~/emberlamp
+coccinella-labs clone ~/coccinella-labs
 
 # Pull all repos
-emberlamp pull
+coccinella-labs pull
 
 # Push all repos
-emberlamp push
+coccinella-labs push
 
 # Show status
-emberlamp status
+coccinella-labs status
 
 # Create new repo
-emberlamp create new-repo "Description"
+coccinella-labs create new-repo "Description"
 
 # Execute command in all repos (tested with real example)
-emberlamp exec "echo 'test' > test.txt"
-emberlamp exec "git add -A && git commit -m 'chore: add test file' && git push"
+coccinella-labs exec "echo 'test' > test.txt"
+coccinella-labs exec "git add -A && git commit -m 'chore: add test file' && git push"
 ```
 
 ## Examples - Tested Workflow
 
 ```bash
 # 1. Clone all repos
-emberlamp clone ~/emberlamp
+coccinella-labs clone ~/coccinella-labs
 
 # 2. Change to the cloned directory
-cd ~/emberlamp
+cd ~/coccinella-labs
 
 # 3. Add a file to all repos
-emberlamp exec "echo 'test' > test.txt"
+coccinella-labs exec "echo 'test' > test.txt"
 
 # 4. Commit and push to all repos (successfully pushed to all 11 repos!)
-emberlamp exec "git add -A && git commit -m 'chore: add test file' && git push"
+coccinella-labs exec "git add -A && git commit -m 'chore: add test file' && git push"
 ```
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `list` | List all Emberlamp repos |
+| `list` | List all Coccinella Labs repos |
 | `clone [dir]` | Clone all repos to directory |
 | `pull` | Pull all cloned repos |
 | `push` | Push all cloned repos |
@@ -81,7 +81,7 @@ emberlamp exec "git add -A && git commit -m 'chore: add test file' && git push"
 
 ## Repositories Managed
 
-Managed dynamically from `repos.json` in [emberlamp/config](https://github.com/emberlamp/config).
+Managed dynamically from `repos.json` in [coccinella-labs/config](https://github.com/coccinella-labs/config).
 
 ## Future: Automation with GitHub Bot
 
